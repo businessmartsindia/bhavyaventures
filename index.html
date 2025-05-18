@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavya Ventures - Real Estate Services Enquiry</title>
+    <meta name="description" content="Enquire about premium real estate services in India - Residential, Commercial, Industrial properties and Investment opportunities. Get expert consultation today!">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f2ff; /* Light blue background */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.1);
+            border-top: 5px solid #0066cc;
+        }
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .intro-text {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0066cc;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #b3d1ff;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f5faff;
+        }
+        .service-columns {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        .service-column {
+            flex: 1;
+            background-color: #f5faff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #b3d1ff;
+        }
+        .service-column h3 {
+            color: #0066cc;
+            border-bottom: 2px solid #b3d1ff;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .service-group {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .service-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        .submit-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .submit-btn {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .email-btn {
+            background-color: #0066cc;
+            color: white;
+        }
+        .email-btn:hover {
+            background-color: #004d99;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+        }
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .service-columns, .submit-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Bhavya Ventures - Real Estate Enquiry</h1>
+        <p class="intro-text">
+            Looking for <strong>residential, commercial, or industrial properties</strong> in India? 
+            Enquire now about our premium <strong>rental and sale services</strong>, including plots, 
+            apartments, offices, and investment opportunities. Get expert consultation today!
+        </p>
+        
+        <form id="enquiryForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">WhatsApp Number *</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10 digit number" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="service-columns">
+                <div class="service-column">
+                    <h3>Residential Services</h3>
+                    <div class="service-group">
+                        <input type="checkbox" id="plot" name="services[]" value="Plot">
+                        <label for="plot">Plot</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="apartment" name="services[]" value="Apartment Flats">
+                        <label for="apartment">Apartment Flats</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="society" name="services[]" value="Society Flats">
+                        <label for="society">Society Flats</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="house" name="services[]" value="Independent House">
+                        <label for="house">Independent House</label>
+                    </div>
+                </div>
+                
+                <div class="service-column">
+                    <h3>Commercial Services</h3>
+                    <div class="service-group">
+                        <input type="checkbox" id="building" name="services[]" value="Commercial Building">
+                        <label for="building">Commercial Building</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="office" name="services[]" value="Office Space">
+                        <label for="office">Office Space</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="godown" name="services[]" value="Godown">
+                        <label for="godown">Godown</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="shop" name="services[]" value="Shop">
+                        <label for="shop">Shop</label>
+                    </div>
+                </div>
+                
+                <div class="service-column">
+                    <h3>Industrial & Investment</h3>
+                    <div class="service-group">
+                        <input type="checkbox" id="factory" name="services[]" value="Factory">
+                        <label for="factory">Factory</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="industrial-plot" name="services[]" value="Industrial Plot">
+                        <label for="industrial-plot">Industrial Plot</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="new-project" name="services[]" value="New Projects">
+                        <label for="new-project">New Projects</label>
+                    </div>
+                    <div class="service-group">
+                        <input type="checkbox" id="investment" name="services[]" value="Investment Opportunity">
+                        <label for="investment">Investment Opportunity</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget" name="budget">
+                    <option value="">Select Budget</option>
+                    <option value="Under 50L">Under ₹50 Lakhs</option>
+                    <option value="50L-1Cr">₹50 Lakhs - ₹1 Crore</option>
+                    <option value="1Cr-2Cr">₹1-2 Crores</option>
+                    <option value="Above 2Cr">Above ₹2 Crores</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="purpose">Purpose</label>
+                <select id="purpose" name="purpose">
+                    <option value="">Select Purpose</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Buy">Buy</option>
+                    <option value="Lease">Lease</option>
+                    <option value="Invest">Invest</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Preferred Location(s)</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Bangalore, Mumbai, Delhi NCR">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Requirements</label>
+                <textarea id="message" name="message" rows="4" placeholder="Specific requirements, timeline, etc."></textarea>
+            </div>
+            
+            <div class="submit-options">
+                <button type="button" class="submit-btn email-btn" onclick="submitEmail()">
+                    Submit via Email
+                </button>
+                <button type="button" class="submit-btn whatsapp-btn" onclick="submitWhatsApp()">
+                    Submit via WhatsApp
+                </button>
+            </div>
+            
+            <div id="successMsg" class="success-message"></div>
+        </form>
+    </div>
+
+    <script>
+        function submitEmail() {
+            if (!validateForm()) return;
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                services: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(el => el.value),
+                budget: document.getElementById('budget').value,
+                purpose: document.getElementById('purpose').value,
+                location: document.getElementById('location').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create email body
+            let emailBody = `New Real Estate Enquiry from Bhavya Ventures Website\n\n`;
+            emailBody += `Name: ${formData.name}\n`;
+            emailBody += `Phone: ${formData.phone}\n`;
+            emailBody += `Email: ${formData.email}\n\n`;
+            emailBody += `Budget: ${formData.budget || 'Not specified'}\n`;
+            emailBody += `Purpose: ${formData.purpose || 'Not specified'}\n`;
+            emailBody += `Preferred Locations: ${formData.location || 'Not specified'}\n\n`;
+            
+            if (formData.services.length > 0) {
+                emailBody += `Services Interested In:\n`;
+                formData.services.forEach(service => {
+                    emailBody += `- ${service}\n`;
+                });
+                emailBody += `\n`;
+            }
+            
+            if (formData.message) {
+                emailBody += `Additional Requirements:\n${formData.message}\n\n`;
+            }
+            
+            // Submit via FormSubmit
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'https://formsubmit.co/ajax/info@bhavyaventures.com';
+            
+            const fields = {
+                '_subject': 'New Real Estate Enquiry - Bhavya Ventures Website',
+                'name': formData.name,
+                'phone': formData.phone,
+                'email': formData.email,
+                'services': formData.services.join(', '),
+                'budget': formData.budget,
+                'purpose': formData.purpose,
+                'location': formData.location,
+                'message': formData.message,
+                '_replyto': formData.email,
+                '_template': 'table',
+                '_autoresponse': `Dear ${formData.name},\n\nThank you for contacting Bhavya Ventures about your real estate needs.\n\nWe've received your enquiry and our expert will contact you within 24 hours.\n\nFor immediate assistance:\n📞 +91 XXXXXXXXXX\n📧 info@bhavyaventures.com\n\nBest regards,\nBhavya Ventures Team\nwww.bhavyaventures.com`
+            };
+            
+            Object.entries(fields).forEach(([name, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = name;
+                input.value = value;
+                form.appendChild(input);
+            });
+            
+            document.body.appendChild(form);
+            form.submit();
+            
+            showSuccess('Thank you! Your real estate enquiry has been submitted. We will contact you shortly.');
+            document.getElementById('enquiryForm').reset();
+        }
+
+        function submitWhatsApp() {
+            if (!validateForm()) return;
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                services: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(el => el.value),
+                budget: document.getElementById('budget').value,
+                purpose: document.getElementById('purpose').value,
+                location: document.getElementById('location').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Compose WhatsApp message
+            let whatsappMsg = `*New Real Estate Enquiry - Bhavya Ventures*\n\n`;
+            whatsappMsg += `*Name:* ${formData.name}\n`;
+            whatsappMsg += `*Phone:* ${formData.phone}\n`;
+            whatsappMsg += `*Email:* ${formData.email}\n\n`;
+            whatsappMsg += `*Budget:* ${formData.budget || 'Not specified'}\n`;
+            whatsappMsg += `*Purpose:* ${formData.purpose || 'Not specified'}\n`;
+            whatsappMsg += `*Locations:* ${formData.location || 'Not specified'}\n\n`;
+            
+            if (formData.services.length > 0) {
+                whatsappMsg += `*Services Required:*\n`;
+                formData.services.forEach(service => {
+                    whatsappMsg += `- ${service}\n`;
+                });
+                whatsappMsg += `\n`;
+            }
+            
+            if (formData.message) {
+                whatsappMsg += `*Additional Info:*\n${formData.message}\n\n`;
+            }
+            
+            whatsappMsg += `_Submitted via Bhavya Ventures Website_`;
+            
+            window.open(`https://wa.me/919871283322?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+            showSuccess('WhatsApp opened! Please send your enquiry to complete submission.');
+        }
+
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            
+            if (!name || !phone || !email) {
+                alert('Please fill all required fields');
+                return false;
+            }
+            
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit WhatsApp number');
+                return false;
+            }
+            
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            return true;
+        }
+
+        function showSuccess(msg) {
+            const el = document.getElementById('successMsg');
+            el.textContent = msg;
+            el.style.display = 'block';
+            setTimeout(() => {
+                el.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
